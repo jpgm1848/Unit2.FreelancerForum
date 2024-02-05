@@ -39,8 +39,8 @@ function displayInitialFreelancer(array) {
 displayInitialFreelancer(initialFreelancers);
 
 let index = 0;
-let averageTotal = 80;
-let averageCalc = 40;
+let averageTotal = initialFreelancers[0].price + initialFreelancers[1].price;
+let averageCalc = averageTotal / 2;
 let selectedIndices = [];
 
 const averagePrice = document.getElementById("startingPrice");
