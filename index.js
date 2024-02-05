@@ -9,6 +9,35 @@ const freelancers = [
   { name: "Prof. Goose", price: 72, occupation: "driver" },
 ];
 
+const initialFreelancers = [
+  { name: "Alice", price: 30, occupation: "writer" },
+  { name: "Bob", price: 50, occupation: "teacher" },
+];
+
+function displayInitialFreelancer(array) {
+  for (let index = 0; index < array.length; index++) {
+    const nameColumn = document.getElementById("nameColumn");
+    const occColumn = document.getElementById("occColumn");
+    const priceColumn = document.getElementById("priceColumn");
+
+    const nameList = document.createElement("div");
+    const occList = document.createElement("div");
+    const priceList = document.createElement("div");
+
+    nameList.textContent = initialFreelancers[index].name;
+    occList.textContent =
+      initialFreelancers[index].occupation.charAt(0).toUpperCase() +
+      initialFreelancers[index].occupation.slice(1);
+    priceList.textContent = "$" + initialFreelancers[index].price;
+
+    nameColumn.append(nameList);
+    occColumn.append(occList);
+    priceColumn.append(priceList);
+  }
+}
+
+displayInitialFreelancer(initialFreelancers);
+
 let index = 0;
 let averageTotal = 80;
 let averageCalc = 40;
